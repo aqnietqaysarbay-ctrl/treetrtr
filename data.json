@@ -1,0 +1,99 @@
+{
+  "city": "Berlin, Germany",
+  "date": "Tuesday, Aug 5, 2025",
+  "current": {
+    "temp": 68,
+    "feels_like": 64,
+    "humidity": 46,
+    "wind_speed": 9,
+    "precipitation": 0,
+    "condition": "Cloudy",
+    "icon": "./assets/images/icon-snow.webp"
+  },
+  "hourly_forecast": [
+    {
+      "time": "3 PM",
+      "temp": "13°",
+      "icon": "./assets/images/icon-snow.webp"
+    },
+    {
+      "time": "4 PM",
+      "temp": "14°",
+      "icon": "./assets/images/icon-sunny.webp"
+    },
+    {
+      "time": "5 PM",
+      "temp": "14°",
+      "icon": "./assets/images/icon-snow.webp"
+    },
+    {
+      "time": "6 PM",
+      "temp": "17°",
+      "icon": "./assets/images/icon-snow.webp"
+    },
+    {
+      "time": "7 PM",
+      "temp": "20°",
+      "icon": "./assets/images/icon-storm.webp"
+    },
+    {
+      "time": "8 PM",
+      "temp": "20°",
+      "icon": "./assets/images/icon-storm.webp"
+    },
+    {
+      "time": "9 PM",
+      "temp": "20°",
+      "icon": "./assets/images/icon-sunny.webp"
+    },
+    {
+      "time": "10 PM",
+      "temp": "23°",
+      "icon": "./assets/images/icon-sunny.webp"
+    }
+  ],
+  "daily_forecast": [
+    {
+      "day": "Tue",
+      "max": 18,
+      "min": 57,
+      "icon": "./assets/images/icon-rain.webp"
+    },
+    {
+      "day": "Wed",
+      "max": 70,
+      "min": 59,
+      "icon": "./assets/images/icon-sunny.webp"
+    },
+    {
+      "day": "Thu",
+      "max": 75,
+      "min": 57,
+      "icon": "./assets/images/icon-fog.webp"
+    },
+    {
+      "day": "Fri",
+      "max": 77,
+      "min": 55,
+      "icon": "./assets/images/icon-storm.webp"
+    },
+    {
+      "day": "Sat",
+      "max": 70,
+      "min": 59,
+      "icon": "./assets/images/icon-fog.webp"
+    },
+    {
+      "day": "Sun",
+      "max": 77,
+      "min": 61,
+      "icon": "./assets/images/icon-snow.webp"
+    },
+    {
+      "day": "Mon",
+      "max": 75,
+      "min": 59,
+      "icon": "./assets/images/icon-snow.webp"
+    }
+  ]
+}

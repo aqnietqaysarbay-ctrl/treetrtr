@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Weather app</title>
+
+    <style>
+      body {
+        margin: 0%;
+        background-color: hsl(243, 96%, 9%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+      .container {
+        font-family: sans-serif;
+        color: white;
+        background-color: hsl(243, 96%, 9%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+      .gridsbig {
+        display: grid;
+        gap: 20px;
+        grid-template-areas:
+          "box1 box1 box2"
+          "box1 box1 box2"
+          "box3 box3 box2";
+        width: 1000px;
+        height: 450px;
+      }
+      .box1 {
+        grid-area: box1;
+
+        display: grid;
+        gap: 25px;
+        grid-template-areas:
+          "minibox1 minibox1 minibox1 minibox1"
+          "minibox1 minibox1 minibox1 minibox1"
+          "minibox2 minibox3 minibox4 minibox5";
+      }
+      .box2 {
+        grid-area: box2;
+        background-color: hsla(243, 23%, 30%, 0.721);
+        padding: 15px;
+        border-radius: 20px;
+      }
+      .box3 {
+        grid-area: box3;
+        display: grid;
+        gap: 10px;
+        grid-template-areas: "mini1 mini2 mini3 mini4 mini5 mini6 mini7";
+      }
+      .mini1 {
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: mini1;
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: hsl(233, 67%, 56%);
+        border: none;
+        color: white;
+        font-size: 15px;
+        border-radius: 10px;
+      }
+      input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: hsla(243, 23%, 30%, 0.721);
+        border: none;
+        color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        width: 320px;
+      }
+      ::placeholder {
+        color: rgba(255, 255, 255, 0.651);
+      }
+      .search {
+        display: flex;
+        gap: 20px;
+      }
+
+      .mini2 {
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: mini2;
+      }
+      .mini3 {
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: mini3;
+      }
+      .mini4 {
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: mini4;
+      }
+      .mini5 {
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: mini5;
+      }
+      .mini6 {
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: mini6;
+      }
+      .mini7 {
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: mini7;
+      }
+
+      .minibox1 {
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        background-image: url(assets/images/bg-today-large.svg);
+        background-size: cover;
+        grid-area: minibox1;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 20px;
+      }
+      .minibox2 {
+        grid-area: minibox2;
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+      }
+      .minibox3 {
+        grid-area: minibox3;
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+      }
+      .minibox4 {
+        grid-area: minibox4;
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+      }
+      .minibox5 {
+        grid-area: minibox5;
+        background-color: hsla(243, 23%, 30%, 0.721);
+        font-family: sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+      }
+      h2 {
+        font-size: 80px;
+      }
+      span {
+        font-size: 30px;
+        font-weight: 100;
+      }
+      .card {
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        background-color: hsl(243, 23%, 30%);
+        padding-left: 5px;
+        padding-right: 13px;
+        border-radius: 10px;
+        border: 1.5px solid rgba(255, 255, 255, 0.106);
+        align-items: center;
+      }
+      .deg {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .incard {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>How's the sky looking today?</h1>
+      <div class="search">
+        <input type="text" placeholder="Search for a place..." /><button>
+          Search
+        </button>
+      </div>
+      <div class="gridsbig">
+        <div class="box1">
+          <div class="minibox1">
+            <div class="left">
+              <p style="font-size: 20px">Berlin, Germany</p>
+              <p style="font-size: 15px; font-weight: 100">
+                Tuesday, Aug 5, 2025
+              </p>
+            </div>
+            <h2>20°</h2>
+          </div>
+          <div class="minibox2">
+            <p>Feels Like</p>
+            <span>18°</span>
+          </div>
+          <div class="minibox3">
+            <p>Feels Like</p>
+            <span>18°</span>
+          </div>
+          <div class="minibox4">
+            <p>Feels Like</p>
+            <span>18°</span>
+          </div>
+          <div class="minibox5">
+            <p>Feels Like</p>
+            <span>18°</span>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="top">
+            <p>Hourly forecast</p>
+            <select name="" id="">
+              <option value="">fdf</option>
+            </select>
+          </div>
+          <div class="cards"></div>
+        </div>
+
+        <div class="box3">
+          <!-- <div class="mini1">
+            <p>Tue</p>
+            <img
+              style="width: 50px; height: 50px"
+              src="assets/images/icon-drizzle.webp"
+              alt=""
+            />
+            <div class="deg">
+              <p>20°</p>
+              <p>14°</p>
+            </div>
+          </div>
+          <div class="mini2">
+            <p>Tue</p>
+            <img
+              style="width: 50px; height: 50px"
+              src="assets/images/icon-drizzle.webp"
+              alt=""
+            />
+            <div class="deg">
+              <p>20°</p>
+              <p>14°</p>
+            </div>
+          </div>
+          <div class="mini3">
+            <p>Tue</p>
+            <img
+              style="width: 50px; height: 50px"
+              src="assets/images/icon-drizzle.webp"
+              alt=""
+            />
+            <div class="deg">
+              <p>20°</p>
+              <p>14°</p>
+            </div>
+          </div>
+          <div class="mini4">
+            <p>Tue</p>
+            <img
+              style="width: 50px; height: 50px"
+              src="assets/images/icon-drizzle.webp"
+              alt=""
+            />
+            <div class="deg">
+              <p>20°</p>
+              <p>14°</p>
+            </div>
+          </div>
+          <div class="mini5">
+            <p>Tue</p>
+            <img
+              style="width: 50px; height: 50px"
+              src="assets/images/icon-drizzle.webp"
+              alt=""
+            />
+            <div class="deg">
+              <p>20°</p>
+              <p>14°</p>
+            </div>
+          </div>
+          <div class="mini6">
+            <p>Tue</p>
+            <img
+              style="width: 50px; height: 50px"
+              src="assets/images/icon-drizzle.webp"
+              alt=""
+            />
+            <div class="deg">
+              <p>20°</p>
+              <p>14°</p>
+            </div>
+          </div>
+          <div class="mini7">
+            <p>Tue</p>
+            <img
+              style="width: 50px; height: 50px"
+              src="assets/images/icon-drizzle.webp"
+              alt=""
+            />
+            <div class="deg">
+              <p>20°</p>
+              <p>14°</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
