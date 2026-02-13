@@ -1,6 +1,7 @@
 let cards = document.querySelector(".cards");
 let URL = "./data.json";
-async function add() {
+async function add(e) {
+  e.preventDefault();
   let promise = await fetch(URL);
   let data = await promise.json();
   let hour = data.hourly_forecast;
@@ -23,7 +24,8 @@ async function add() {
 document.addEventListener("DOMContentLoaded", add);
 
 let days = document.querySelector(".box3");
-async function add2() {
+async function add2(e) {
+  e.preventDefault();
   let promise = await fetch(URL);
   let data = await promise.json();
   let day = data.daily_forecast;
